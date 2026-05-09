@@ -1,16 +1,13 @@
-import { useContext } from 'react'
-import { ThemeContext } from '../app/providers/ThemeProvider'
+import { useCallback } from 'react'
+import { Button, useThemeMode } from 'uiApp/ui'
 
 export default function ThemeToggle () {
-  const { toggleTheme } = useContext(ThemeContext)
+  const { mode, toggleMode } = useThemeMode()
+  const onToggle = useCallback(() => toggleMode(), [toggleMode])
 
   return (
-    <button
-      onClick={toggleTheme}
-      className="px-4 py-2 bg-primary text-white rounded-md"
-      type="button"
-    >
-      Toggle Theme
-    </button>
+    <Button variant="ghost" onClick={onToggle}>
+      {mode === 'dark' ? 'Light' : 'Dark'}
+    </Button>
   )
 }

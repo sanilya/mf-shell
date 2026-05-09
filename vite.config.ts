@@ -8,6 +8,7 @@ export default defineConfig({
     federation({
       name: "shell",
       remotes: {
+        uiApp: "http://localhost:5003/assets/remoteEntry.js",
         authApp: "http://localhost:5001/assets/remoteEntry.js",
         dashboardApp: "http://localhost:5002/assets/remoteEntry.js"
       },

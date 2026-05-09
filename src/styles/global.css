@@ -3,7 +3,7 @@
 @tailwind utilities;
 
 body {
-  @apply bg-background-light dark:bg-background-dark
-    text-slate-900 dark:text-slate-100
-    font-sans;
+  @apply font-sans;
+  background: var(--mf-background);
+  color: var(--mf-text);
 }
